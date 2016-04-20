@@ -10,6 +10,7 @@ app.get('/:review', function (req, res) {
     if (!error && response.statusCode == 200) {
       var reviewData = JSON.parse(body);
       var calculatedData = {};
+      calculatedData.id = req.params.review;
       calculatedData.loc = extractor.getLoc(reviewData);
       calculatedData.defectCount = extractor.getDefectsCount(reviewData);
       calculatedData.commentsCount = extractor.getCommentsCount(reviewData);

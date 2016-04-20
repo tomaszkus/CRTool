@@ -1,5 +1,5 @@
-<div class="row marketing">
-  <h2>Review ID: {{review}}</h2>
+<div class="row marketing" ng-repeat="data in reviews">
+  <h2>Review ID: {{data.id}}</h2>
   <table class="table table-reflow">
     <tr>
       <th>LOC</th>
