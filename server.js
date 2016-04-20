@@ -11,6 +11,7 @@ app.get('/:review', function (req, res) {
       var reviewData = JSON.parse(body);
       var calculatedData = {};
       calculatedData.id = req.params.review;
+      calculatedData.allDefects = getDefectsForReview(calculatedData.id);
       calculatedData.loc = extractor.getLoc(reviewData);
       calculatedData.defectCount = extractor.getDefectsCount(reviewData);
       calculatedData.commentsCount = extractor.getCommentsCount(reviewData);
@@ -23,3 +24,12 @@ app.get('/:review', function (req, res) {
     }
   })
 });
+
+function getDefectsForReview(id) {
+  switch (id) {
+    case 'CR-1': return 50;
+    case 'CR-2': return 70;
+    default: return 100;
+
+  }
+}

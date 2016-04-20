@@ -23,7 +23,7 @@ angular.module('crtoolApp')
             data.id = result.data.id;
             data.loc = result.data.loc;
             data.defectCount = result.data.defectCount;
-            data.allDefects = 10;
+            data.allDefects = result.data.allDefects;
             data.commentsCount = result.data.commentsCount;
             data.totalTime = result.data.time.total;
             data.avgTime = result.data.time.avg;
