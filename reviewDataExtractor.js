@@ -2,7 +2,7 @@ exports.getLoc = function(input) {
   var items = input.reviewItems.reviewItem;
   var total = 0;
   for (var i in items) {
-    total += parseInt(items[i].expandedRevisions[0].changedLines);
+          total += parseInt(items[i].expandedRevisions[0].changedLines);
   }
 
   return total;
@@ -35,7 +35,6 @@ exports.getDefectsCount = function(input) {
   var versionedComments = input.versionedComments.comments;
   return getDefectsCountFrom(generalComments) + getDefectsCountFrom(versionedComments);
 };
-
 exports.getCommentsCount = function(input) {
   var generalComments = input.generalComments.comments;
   var versionedComments = input.versionedComments.comments;
@@ -50,7 +49,7 @@ exports.getTime = function(input) {
     var current = parseInt(items[i].timeSpent);
     if (!isNaN(current)) {
       total += current;
-      all.push(Math.floor(current / 6000));
+      all.push(Math.floor(current / 6000))
     }
 
   }
@@ -75,7 +74,7 @@ exports.getInspectionRate = function(timesSpent, loc) {
   }
 
   for (var i in timesSpent) {
-    var current = Math.floor(loc / timesSpent[i] * 60);
+    var current = Math.floor(loc * 6 / timesSpent[i]);
     all.push(Math.floor(current));
     total += current;
   }
@@ -86,5 +85,5 @@ exports.getInspectionRate = function(timesSpent, loc) {
 };
 
 exports.getDefectDensity = function(defectCount, loc) {
-  return Math.floor(defectCount / loc * 1000);
+  return Math.floor(defectCount / loc * 1000)
 };
