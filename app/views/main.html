@@ -1,0 +1,29 @@
+<div class="row marketing">
+  <h2>Review ID: {{review}}</h2>
+  <table class="table table-reflow">
+    <tr>
+      <th>LOC</th>
+      <td>{{data.loc}}</td>
+    </tr>
+    <tr>
+      <th>time spent (min)</th>
+      <td>Total: {{data.totalTime}}, Average: {{data.avgTime}}, Individual results: {{data.times}}</td>
+    </tr>
+    <tr>
+      <th>inspection rate</th>
+      <td>Average: {{data.avgInspectionRate}}, Individual results: {{data.allInspectionRates}}</td>
+    </tr>
+    <tr>
+      <th>defects found / all defects (efficiency)/th>
+      <td>{{data.defectCount}} / {{data.allDefects}} ({{data.defectCount / data.allDefects * 100 }} %)</td>
+    </tr>
+    <tr>
+      <th>defect density</th>
+      <td>{{data.defectDensity}}</td>
+    </tr>
+    <tr>
+      <th>comments Count</th>
+      <td>{{data.commentsCount}}</td>
+    </tr>
+  </table>
+</div>
